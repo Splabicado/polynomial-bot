@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main
+{
+    Scanner scan;
+    
+    public Main()
+    {
+        scan = new Scanner(System.in);
+    }
+    
+	public static void main(String[] args) 
+	{
+	    System.out.println("input polynomial in form of (coefficient)x^(power)+(coefficient)x^(power)....");
+	    while (true)
+	    {
+	        String poly = scan.nextLine();
+	        System.out.println("what u want?");
+	        System.out.println("'retry' to reinput polynomial");
+	        System.out.println("'find term (place)' to find the term in a given place");
+	        System.out.println("'find coefficient (place)' to find coefficient for a given term");
+	        System.out.println("'find power (place)' to find the power of a given term");
+	        System.out.println("'standard quadratic factor' to factor a quadratic in form ax^2+bx+c");
+	    }
+	}
+	   
+	public double termSolver(String term, int x)
+    {
+        double coef = Integer.parseInt(term.substring(0,term.indexOf('x')));
+        double power = Integer.parseInt(term.substring(term.indexOf('^')+1));
+        return coef*Math.pow(x,power);
+    }
+    
+    
+}
